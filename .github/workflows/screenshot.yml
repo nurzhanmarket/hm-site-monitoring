@@ -18,19 +18,18 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-     
-      - name: Screenshot Main Page
-        uses: swinton/screenshot-website@v1.x
-        with:
-          source: ${{ secrets.MAIN_PAGE }}
-          destination: screenshot.png
-          full-page: true
 
-      - name: send Screenshot Main Page
-        uses: appleboy/telegram-action@master
+     - name: Screenshot Main Page
+       uses: karol-brejna-i/webpage-screenshot-action@v1
         with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: '#main_page'
-          photo: screenshot.png
-          document: screenshot.png
+          url: ${{ secrets.MAIN_PAGE }}
+     
+      
+     - name: send Screenshot Main Page
+       uses: appleboy/telegram-action@master
+       with:
+         to: ${{ secrets.TELEGRAM_TO }}
+         token: ${{ secrets.TELEGRAM_TOKEN }}
+         message: '#main_page'
+         photo: screenshot.png
+         document: screenshot.png
