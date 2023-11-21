@@ -18,6 +18,22 @@ jobs:
       - uses: karol-brejna-i/webpage-screenshot-action@v1
         with:
           url: ${{ secrets.MAIN_PAGE }}
+          output: main.png
+
+      - uses: karol-brejna-i/webpage-screenshot-action@v1
+        with:
+          url: ${{ secrets.ADMIN_PAGE }}
+          output: admin.png
+
+      - uses: karol-brejna-i/webpage-screenshot-action@v1
+        with:
+          url: ${{ secrets.CATEGORY_PAGE }}
+          output: category.png
+
+      - uses: karol-brejna-i/webpage-screenshot-action@v1
+        with:
+          url: ${{ secrets.PRODUCT_PAGE }}
+          output: product.png
      
       - name: send Screenshot Main Page
         uses: appleboy/telegram-action@master
@@ -25,4 +41,28 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: '#main_page'
-          photo: ${{ github.workspace }}/screenshot.png
+          photo: ${{ github.workspace }}/main.png
+
+      - name: send Screenshot Admin Page
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: '#admin_page'
+          photo: ${{ github.workspace }}/admin.png
+
+      - name: send Screenshot Category Page
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: '#category_page'
+          photo: ${{ github.workspace }}/category.png
+
+      - name: send Screenshot Product Page
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: '#product_page'
+          photo: ${{ github.workspace }}/product.png
