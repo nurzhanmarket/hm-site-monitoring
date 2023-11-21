@@ -1,4 +1,4 @@
-name: screenshots
+name: screenshot
 
 on:
   schedule:
@@ -18,8 +18,8 @@ jobs:
 
       - name: Screenshot Main Page
         uses: karol-brejna-i/webpage-screenshot-action@v1
-         with:
-           url: ${{ secrets.MAIN_PAGE }}
+        with:
+         url: ${{ secrets.MAIN_PAGE }}
      
       
       - name: send Screenshot Main Page
