@@ -1,8 +1,5 @@
-# This is a basic workflow to help you get started with Actions
+name: screenshots
 
-name: Make screenshots
-
-# Controls when the workflow will run
 on:
   schedule:
     - cron: "*/5 * * * *"
@@ -19,17 +16,17 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
-     - name: Screenshot Main Page
-       uses: karol-brejna-i/webpage-screenshot-action@v1
-        with:
-          url: ${{ secrets.MAIN_PAGE }}
+      - name: Screenshot Main Page
+        uses: karol-brejna-i/webpage-screenshot-action@v1
+         with:
+           url: ${{ secrets.MAIN_PAGE }}
      
       
-     - name: send Screenshot Main Page
-       uses: appleboy/telegram-action@master
-       with:
-         to: ${{ secrets.TELEGRAM_TO }}
-         token: ${{ secrets.TELEGRAM_TOKEN }}
-         message: '#main_page'
-         photo: screenshot.png
-         document: screenshot.png
+      - name: send Screenshot Main Page
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: '#main_page'
+          photo: screenshot.png
+          document: screenshot.png
