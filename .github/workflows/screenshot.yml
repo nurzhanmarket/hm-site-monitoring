@@ -25,5 +25,4 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: '#main_page'
-          photo: screenshot.png
-          document: screenshot.png
+          photo: ${{ github.workspace }}/screenshot.png
