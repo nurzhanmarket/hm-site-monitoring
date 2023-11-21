@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: karol-brejna-i/webpage-screenshot-action@v1
         with:
-          url: https://halykmarket.kz
+          url: ${{ secrets.MAIN_PAGE }}
      
       - name: send Screenshot Main Page
         uses: appleboy/telegram-action@master
