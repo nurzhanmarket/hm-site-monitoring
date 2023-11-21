@@ -16,10 +16,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
-      - name: Screenshot Main Page
-        uses: karol-brejna-i/webpage-screenshot-action@v1
+      - name: Screenshot Website
+        uses: swinton/screenshot-website@v1.x
         with:
-         url: ${{ secrets.MAIN_PAGE }}
+          source: https://halykmarket.kz
+          destination: screenshot.png
      
       
       - name: send Screenshot Main Page
