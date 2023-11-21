@@ -15,14 +15,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-
-      - name: Screenshot Website
-        uses: swinton/screenshot-website@v1.x
+      - uses: karol-brejna-i/webpage-screenshot-action@v1
         with:
-          source: https://halykmarket.kz
-          destination: screenshot.png
+          url: https://halykmarket.kz
      
-      
       - name: send Screenshot Main Page
         uses: appleboy/telegram-action@master
         with:
